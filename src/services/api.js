@@ -1,3 +1,5 @@
+import user from '../images/user.png';
+
 const getDataApi = (url) => {
   return fetch(url)
     .then((response) => response.json())
@@ -5,7 +7,7 @@ const getDataApi = (url) => {
       const cleanData = data.map((eachCharacter) => {
         return {
           name: eachCharacter.name,
-          photo: eachCharacter.image || `https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter`,
+          photo: eachCharacter.image || user,
           species: eachCharacter.species,
           id: eachCharacter.id,
           house: eachCharacter.house,

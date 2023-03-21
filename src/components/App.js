@@ -5,6 +5,7 @@ import '../styles/App.scss';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail'; 
+import background from '../images/harry.jpg'
 
 
 function App() {
@@ -34,9 +35,8 @@ function App() {
   })
 
   return(
-       <div  /* style={{ 
-      backgroundImage: `url(${header})`} */>
-        <div className='background'/>
+       <div className='background' style={{ 
+      backgroundImage: `url(${background})`}}>
         <header>
           <h1 className='header'>⚡Elige tu personaje de Harry Potter🤓</h1>
         </header>

@@ -1,5 +1,6 @@
 import { Link, useLocation, matchPath } from 'react-router-dom';
 import getDataApi from '../services/api';
+/* import '../styles/layouts/CharacterDetail.scss';  */
 
 const CharacterDetail = ({characterList, setCharacterList}) => {
   const { pathname } = useLocation(); 
@@ -17,7 +18,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
     characterFound 
         ?
             (<main>
-            <article>
+            <article className='characterDetail__article'>
                 <img src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>
                 <div>
                 <h2>{characterFound.name}</h2>

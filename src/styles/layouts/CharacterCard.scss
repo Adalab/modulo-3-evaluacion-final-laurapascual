@@ -1,5 +1,4 @@
 .character__image{
-    height: 200px;
     width:150px;
 }
 
@@ -10,6 +9,7 @@
     background-color: rgba(252, 239, 224, 0.986);
     margin: 10px;
     border-radius: 5px;
+    height: 350px;
    
     &__link{
         text-decoration: none;

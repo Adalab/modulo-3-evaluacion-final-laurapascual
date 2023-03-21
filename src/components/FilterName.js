@@ -1,3 +1,5 @@
+import '../styles/layouts/FilterName.scss';
+
 function FilterName({ handleSearchName, searchName }) {
   const handleChange = (ev) => {
     const value = ev.target.value;

@@ -2,17 +2,10 @@
 
 .header{
     text-align: center;
-    font-family: 'Fasthand', cursive;;
+    font-family: 'Fasthand', cursive;
+    background-color: rgba(250, 239, 215, 0.753);
 }
 
 .background{
-    background-image: url('../images/harry.jpg');
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.4;
-    z-index: -1;
+        min-height: 100vh;
 }
