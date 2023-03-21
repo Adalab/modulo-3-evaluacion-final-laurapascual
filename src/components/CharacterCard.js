@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom"; 
+import '../styles/layouts/CharacterCard.scss';
+
 function CharacterCard({ eachCharacter}) {
   return (
     <li>
-      {/* <Link to={`/character/${eachCharacter.id}`}> */}
+      <Link to={`/character/${eachCharacter.id}`}> 
         <img
-          src={eachCharacter.photo || `https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter`}
+        className='character__image'
+          src={eachCharacter.photo}
           alt={`Foto de ${eachCharacter.name}`}
           title={`Foto de ${eachCharacter.name}`}
         ></img>
@@ -13,7 +17,7 @@ function CharacterCard({ eachCharacter}) {
         <p>
           {eachCharacter.species} 
         </p>
-      {/* </Link> */}
+       </Link>  
     </li>
   );
 }

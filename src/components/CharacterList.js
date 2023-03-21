@@ -1,13 +1,14 @@
 import CharacterCard from './CharacterCard';
+import '../styles/layouts/CharacterList.scss';
 
-function ListCharacter({ characterList }) {
+function characterList({ characterList }) {
   const dataHtml = characterList.map((eachCharacter) => {
     return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />;
   });
   return (
     <section>
-      <ul>{dataHtml}</ul>
+      <ul className='list'>{dataHtml}</ul>
     </section>
   );
 }
-export default ListCharacter;
+export default characterList;

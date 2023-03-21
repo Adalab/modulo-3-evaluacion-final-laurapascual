@@ -4,7 +4,7 @@ import getDataApi from '../services/api';
 import '../styles/App.scss';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import CharacterDetail from './CharacterDetail';
+import CharacterDetail from './CharacterDetail'; 
 
 
 function App() {
@@ -33,18 +33,25 @@ function App() {
     return selectHouse === 'all' ? true : eachCharacter.house === selectHouse
   })
   
-  return(<>
-      <h1>Harry Potter</h1>
-      <main className="main">
+  return(
+       <div  /* style={{ 
+      backgroundImage: `url(${header})`} */>
+        <div className='background'/>
+        <header>
+          <h1 className='header'>⚡Elige tu personaje de Harry Potter🤓</h1>
+        </header>
+        <main className="main">
         <Routes>
           <Route path='/' 
             element={<>
               <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse}></Filters>
               <CharacterList characterList={characterFiltered}/></>}/>
-          <Route path='/character/:characterId' element={<CharacterDetail/>}/>
+          <Route path='/character/:characterId' 
+          element={<CharacterDetail characterList={characterList}/>}/> 
         </Routes>
       </main>
-    </>)
+      </div>
+    )
 }
 
 /* PROP-TYPES */
