@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { Routes, Route} from 'react-router-dom';
 import getDataApi from '../services/api';
 import '../styles/App.scss';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import CharacterDetail from './CharacterDetail';
 
 
 function App() {
@@ -34,8 +36,13 @@ function App() {
   return(<>
       <h1>Harry Potter</h1>
       <main className="main">
-        <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse}></Filters>
-        <CharacterList characterList={characterFiltered}/>
+        <Routes>
+          <Route path='/' 
+            element={<>
+              <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse}></Filters>
+              <CharacterList characterList={characterFiltered}/></>}/>
+          <Route path='/character/:characterId' element={<CharacterDetail/>}/>
+        </Routes>
       </main>
     </>)
 }
