@@ -6,7 +6,7 @@ const getDataApi = () => {
         return {
           name: eachCharacter.name,
           photo: eachCharacter.image,
-          specie: eachCharacter.specie,
+          species: eachCharacter.species,
           id:eachCharacter.id,
         };
       });
