@@ -2,3 +2,23 @@
     height: 200px;
     width:150px;
 }
+
+.card {
+    font-family: 'Fasthand', cursive;
+    text-align: center;
+    padding-top: 20px;
+    background-color: rgba(252, 239, 224, 0.986);
+    margin: 10px;
+    border-radius: 5px;
+   
+    &__link{
+        text-decoration: none;
+        color: black;
+    }
+    &__title{
+        font-size: 25px;
+    }
+    &__subtitle {
+        font-size: 20px;
+    }
+}
