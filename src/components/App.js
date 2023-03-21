@@ -13,7 +13,7 @@ function App() {
   const [selectHouse, setSelectHouse] = useState('Gryffindor');
 
   useEffect(() => {
-    getDataApi(selectHouse).then((cleanData) => {
+    getDataApi(`https://hp-api.onrender.com/api/characters/house/${selectHouse}`).then((cleanData) => {
       setCharacterList(cleanData);
     });
   }, [selectHouse]);
@@ -32,7 +32,7 @@ function App() {
   .filter((eachCharacter) => {
     return eachCharacter.house === selectHouse
   })
-  
+
   return(
        <div  /* style={{ 
       backgroundImage: `url(${header})`} */>
@@ -47,7 +47,7 @@ function App() {
               <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse}></Filters>
               <CharacterList characterList={characterFiltered}/></>}/>
           <Route path='/character/:characterId' 
-          element={<CharacterDetail characterList={characterList}/>}/> 
+          element={<CharacterDetail characterList={characterList} setCharacterList={setCharacterList}/>}/> 
         </Routes>
       </main>
       </div>
