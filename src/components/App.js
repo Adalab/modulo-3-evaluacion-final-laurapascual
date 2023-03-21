@@ -10,13 +10,13 @@ import CharacterDetail from './CharacterDetail';
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
-  const [selectHouse, setSelectHouse] = useState('all');
+  const [selectHouse, setSelectHouse] = useState('Gryffindor');
 
   useEffect(() => {
-    getDataApi().then((cleanData) => {
+    getDataApi(selectHouse).then((cleanData) => {
       setCharacterList(cleanData);
     });
-  }, []);
+  }, [selectHouse]);
 
   const handleSearchName = (value) => {
     setSearchName(value);
@@ -30,7 +30,7 @@ function App() {
     return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase());
   })
   .filter((eachCharacter) => {
-    return selectHouse === 'all' ? true : eachCharacter.house === selectHouse
+    return eachCharacter.house === selectHouse
   })
   
   return(
