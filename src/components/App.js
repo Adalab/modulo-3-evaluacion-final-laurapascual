@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import getDataApi from '../services/api';
 import '../styles/App.scss';
 import CharacterList from './CharacterList';
+import Filters from './Filters';
 
 
-
-/* SECCIÓN DEL COMPONENTE */
 function App() {
   const [characterList, setCharacterList] = useState([]);
+  const [searchName, setSearchName] = useState('');
 
   useEffect(() => {
     getDataApi().then((cleanData) => {
@@ -15,15 +15,19 @@ function App() {
     });
   }, []);
 
-  /* FUNCIONES HANDLER */
+  const handleSearchName = (value) => {
+    setSearchName(value);
+  };
 
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
-
-  /* HTML */
+  const characterFiltered = characterList.filter((eachCharacter) => {
+    return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase());
+  })
+  
   return(<>
       <h1>Harry Potter</h1>
       <main className="main">
-         <CharacterList characterList={characterList}/>
+        <Filters searchName={searchName} handleSearchName={handleSearchName}></Filters>
+        <CharacterList characterList={characterFiltered}/>
       </main>
     </>)
 }
