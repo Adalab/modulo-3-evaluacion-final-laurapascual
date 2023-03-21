@@ -6,7 +6,7 @@ function FilterName({ handleSearchName, searchName }) {
 
   return (
     <>
-      <label htmlFor="search">Filtrar por nombre:</label>
+      <label htmlFor="search">Busca por personaje:</label>
           <input
             className="form__input-text"
             autoComplete="off"
