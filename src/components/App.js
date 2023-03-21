@@ -1,23 +1,31 @@
-/* SECCIÓN DE IMPORT */
-
-// - De React
-// - Nuestros
-// - Sass
+import { useEffect, useState } from 'react';
+import getDataApi from '../services/api';
 import '../styles/App.scss';
-// - Imágenes
+import CharacterList from './CharacterList';
+
+
 
 /* SECCIÓN DEL COMPONENTE */
 function App() {
-  /* VARIABLES ESTADO (DATOS) */
+  const [characterList, setCharacterList] = useState([]);
 
-  /* EFECTOS (código cuando carga la página) */
+  useEffect(() => {
+    getDataApi().then((cleanData) => {
+      setCharacterList(cleanData);
+    });
+  }, []);
 
   /* FUNCIONES HANDLER */
 
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
 
   /* HTML */
-  return <div className="App">{/* Aquí va el HTML */}</div>;
+  return(<>
+      <h1>Harry Potter</h1>
+      <main className="main">
+         <CharacterList characterList={characterList}/>
+      </main>
+    </>)
 }
 
 /* PROP-TYPES */

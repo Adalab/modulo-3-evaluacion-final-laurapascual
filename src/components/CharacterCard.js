@@ -11,7 +11,7 @@ function CharacterCard({ eachCharacter}) {
           {eachCharacter.name} 
         </h4>
         <p>
-          {eachCharacter.species} 
+          {eachCharacter.specie} 
         </p>
       {/* </Link> */}
     </li>
