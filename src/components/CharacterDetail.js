@@ -50,7 +50,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
                 </main></>)
         :  
         (<><p className='characterDetail__error'>No se ha encontrado el personaje</p> 
-        <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link></>)
+        <Link className='characterDetail__link' to={"/list"}>🡨 Back</Link></>)
   );
 };
 

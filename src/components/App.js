@@ -5,8 +5,9 @@ import '../styles/App.scss';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail'; 
+import Landing from './Landing'; 
 import background from '../images/harry.jpg'
-
+import Header from './Header';
 
 
 function App() {
@@ -59,13 +60,12 @@ function App() {
   return(
        <div className='background' style={{ 
       backgroundImage: `url(${background})`}}>
-        <header>
-          <h1 className='header'>⚡ Choose your Harry Potter's character 🤓</h1>
-        </header>
         <main className="main">
         <Routes>
-          <Route path='/' 
+          <Route path='/' element={<Landing/>}/>
+          <Route path='/list' 
             element={<>
+              <Header/>
               <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse} handleReset={handleReset} handleSelectStatus={handleSelectStatus} selectStatus={selectStatus}/>
               <CharacterList characterList={characterFiltered} searchName={searchName}/></>}/>
           <Route path='/character/:characterId' 
