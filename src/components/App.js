@@ -13,6 +13,7 @@ function App() {
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [selectHouse, setSelectHouse] = useState('Gryffindor');
+  const [selectStatus, setSelectStatus] = useState('all');
 
   useEffect(() => {
     getDataApi(`https://hp-api.onrender.com/api/characters/house/${selectHouse}`).then((cleanData) => {
@@ -28,16 +29,31 @@ function App() {
     setSelectHouse(value);
   };
 
+  const handleSelectStatus = (value) => {
+    setSelectStatus(value);
+  };
+
   const handleReset = () => {
     setSearchName('');
     setSelectHouse('Gryffindor');
+    setSelectStatus('all');
   }
 
-  const characterFiltered = characterList.filter((eachCharacter) => {
+  const sortedNames = characterList.sort((a,b) => a.name.localeCompare(b.name));
+
+  const characterFiltered = sortedNames.filter((eachCharacter) => {
     return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase());
   })
   .filter((eachCharacter) => {
     return eachCharacter.house === selectHouse
+  })
+  .filter((eachCharacter) => {
+    if(selectStatus === 'alive'){
+      return eachCharacter.status === true
+    } else if (selectStatus === 'dead') {
+      return eachCharacter.status === false
+    }
+    else return true
   })
 
   return(
@@ -50,7 +66,7 @@ function App() {
         <Routes>
           <Route path='/' 
             element={<>
-              <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse} handleReset={handleReset} />
+              <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse} handleReset={handleReset} handleSelectStatus={handleSelectStatus} selectStatus={selectStatus}/>
               <CharacterList characterList={characterFiltered} searchName={searchName}/></>}/>
           <Route path='/character/:characterId' 
           element={<CharacterDetail characterList={characterList} setCharacterList={setCharacterList}/>}/> 
