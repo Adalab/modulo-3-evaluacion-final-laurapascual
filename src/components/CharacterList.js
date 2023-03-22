@@ -1,19 +1,16 @@
 import CharacterCard from './CharacterCard';
 import '../styles/layouts/CharacterList.scss';
 
-function characterList({ characterList }) {
+function characterList({ characterList, error }) {
   const dataHtml = characterList.map((eachCharacter) => {
     return <CharacterCard eachCharacter={eachCharacter} key={eachCharacter.id} />;
   });
 
   return (
-    characterList.length > 0
-    ?
-    (<section>
+    <section>
       <ul className='list'>{dataHtml}</ul>
-    </section>)
-    :
-    <p className='error'>No hay personajes que coincidan con el criterio de búsqueda</p>
+      {error && <p className='error'>No hay personajes que coincidan con el criterio de búsqueda</p>}
+    </section>
   );
 }
 export default characterList;

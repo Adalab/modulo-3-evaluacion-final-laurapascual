@@ -30,23 +30,23 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
     characterFound 
         ?
             (
-                <>
-        <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link>
-        <main className='characterDetail'>
-            <article className='characterDetail__article'>
-                <img className='characterDetail__image' src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>
-                <div>
-                <h2>{characterFound.name}</h2>
-                <ul className='characterDetail__list'>
-                    <li>Estatus: {characterFound.status ? '💓' : '💀'}</li>
-                    <li>Especie: {characterFound.species}</li>
-                    <li>Género: {characterFound.gender} </li>
-                    <li>Casa: {characterFound.house}</li>
-                    <img className='characterDetail__houses' src={houseUrl[characterFound.house.toLowerCase()]} alt={characterFound.house}/>
-                </ul>
-                </div>
-            </article>
-            </main></>)
+            <>
+            <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link>
+            <main className='characterDetail'>
+                <article className='characterDetail__article'>
+                    <img className='characterDetail__image' src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>
+                    <div>
+                    <h2>{characterFound.name}</h2>
+                    <ul className='characterDetail__list'>
+                        <li>Estatus: {characterFound.status ? '💓' : '💀'}</li>
+                        <li>Especie: {characterFound.species}</li>
+                        <li>Género: {characterFound.gender} </li>
+                        <li>Casa: {characterFound.house}</li>
+                        <img className='characterDetail__houses' src={houseUrl[characterFound.house.toLowerCase()]} alt={characterFound.house}/>
+                    </ul>
+                    </div>
+                </article>
+                </main></>)
         :  
         (<><p className='characterDetail__error'>No se ha encontrado el personaje</p> 
         <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link></>)

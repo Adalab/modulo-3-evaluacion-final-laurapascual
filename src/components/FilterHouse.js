@@ -1,6 +1,6 @@
 import '../styles/layouts/FilterHouse.scss';
 
-function FilterHouse({ handleSelectHouse }) {
+function FilterHouse({ handleSelectHouse, selectHouse }) {
   const handleChange = (ev) => {
     const value = ev.target.value;
     handleSelectHouse(value);
@@ -16,6 +16,7 @@ function FilterHouse({ handleSelectHouse }) {
         name="houses"
         id="houses"
         onChange={handleChange}
+        value={selectHouse}
       >
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin </option>
