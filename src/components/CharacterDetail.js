@@ -19,7 +19,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
         ?
             (
                 <>
-        <Link className='characterDetail__link' to={"/"}>Volver</Link>
+        <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link>
         <main className='characterDetail'>
             <article className='characterDetail__article'>
                 <img src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>
@@ -35,7 +35,8 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
             </article>
             </main></>)
         :  
-        <p>No se ha encontrado el personaje</p> 
+        (<><p className='characterDetail__error'>No se ha encontrado el personaje</p> 
+        <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link></>)
   );
 };
 

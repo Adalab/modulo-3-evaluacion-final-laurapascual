@@ -23,6 +23,23 @@
 
     &__link {
         background-color: rgb(199, 139, 124);
+        font-family: 'Fasthand', cursive;
+        font-size: 25px;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        justify-content: center;
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    &__error {
+        font-family: 'Fasthand', cursive;
+        font-weight: bold;
+        font-size: 30px;
+        color: red;
+        text-align: center;
+        background-color: rgba(248, 248, 248, 0.74);
     }
 }
 
