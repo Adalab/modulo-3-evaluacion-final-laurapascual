@@ -13,7 +13,7 @@ const getDataApi = (url) => {
           house: eachCharacter.house,
           status: eachCharacter.alive,
           gender: eachCharacter.gender,
-
+          alternateNames: eachCharacter.alternate_names,
         };
       });
       return cleanData;

@@ -41,6 +41,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
                         <li>Status: {characterFound.status ? '💓' : '💀'}</li>
                         <li>Species: {characterFound.species}</li>
                         <li>Gender: {characterFound.gender} </li>
+                        {characterFound.alternateNames.length !== 0 ? <li>Alternate names: {characterFound.alternateNames}</li> : <li></li>}                        
                         <li>House: {characterFound.house}</li>
                         <img className='characterDetail__houses' src={houseUrl[characterFound.house.toLowerCase()]} alt={characterFound.house}/>
                     </ul>

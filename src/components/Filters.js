@@ -12,7 +12,7 @@ function Filters({handleSearchName, searchName, handleSelectHouse, handleReset, 
       <form className="form__filters" onSubmit={handleSubmit}>
         <FilterName handleSearchName={handleSearchName} searchName={searchName} />
         <FilterHouse handleSelectHouse={handleSelectHouse} selectHouse={selectHouse}/>
-        <input type="button" value="Reset" onClick={handleReset} className='btn__reset'/>
+        <input type="button" value="Reset" onClick={handleReset} className='btn__reset'/>      
       </form>
     </section>
   );
