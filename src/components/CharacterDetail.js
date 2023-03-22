@@ -38,10 +38,10 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
                     <div>
                     <h2>{characterFound.name}</h2>
                     <ul className='characterDetail__list'>
-                        <li>Estatus: {characterFound.status ? '💓' : '💀'}</li>
-                        <li>Especie: {characterFound.species}</li>
-                        <li>Género: {characterFound.gender} </li>
-                        <li>Casa: {characterFound.house}</li>
+                        <li>Status: {characterFound.status ? '💓' : '💀'}</li>
+                        <li>Species: {characterFound.species}</li>
+                        <li>Gender: {characterFound.gender} </li>
+                        <li>House: {characterFound.house}</li>
                         <img className='characterDetail__houses' src={houseUrl[characterFound.house.toLowerCase()]} alt={characterFound.house}/>
                     </ul>
                     </div>

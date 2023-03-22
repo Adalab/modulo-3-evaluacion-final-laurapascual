@@ -8,11 +8,11 @@ import CharacterDetail from './CharacterDetail';
 import background from '../images/harry.jpg'
 
 
+
 function App() {
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [selectHouse, setSelectHouse] = useState('Gryffindor');
-  const [error, setError] = useState(false);
 
   useEffect(() => {
     getDataApi(`https://hp-api.onrender.com/api/characters/house/${selectHouse}`).then((cleanData) => {
@@ -22,11 +22,6 @@ function App() {
 
   const handleSearchName = (value) => {
     setSearchName(value);
-    if(characterFiltered.length > 0 && error) {
-      setError(false)
-    } else if (characterFiltered.length === 0 && !error) { 
-      setError(true)
-    }
   };
 
   const handleSelectHouse = (value) => {
@@ -56,7 +51,7 @@ function App() {
           <Route path='/' 
             element={<>
               <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse} handleReset={handleReset} />
-              <CharacterList characterList={characterFiltered} error={error}/></>}/>
+              <CharacterList characterList={characterFiltered} searchName={searchName}/></>}/>
           <Route path='/character/:characterId' 
           element={<CharacterDetail characterList={characterList} setCharacterList={setCharacterList}/>}/> 
         </Routes>

@@ -14,6 +14,7 @@ function FilterName({ handleSearchName, searchName, error }) {
             autoComplete="off"
             type="search"
             name="search"
+            placeholder='Ex. Harry Potter'
             value={searchName}
             onChange={handleChange}
         />

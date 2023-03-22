@@ -12,9 +12,9 @@
 
     @media (min-width: 769px) {
             font-size: 25px;
-            flex-direction: row;
-        }
+    }
     @media (min-width: 1024px) {
+        flex-direction: row;
         font-size: 30px;
     }
 }
