@@ -1,0 +1,28 @@
+
+.characterDetail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    &__article{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: 'Fasthand', cursive;
+        text-align: center;
+        background-color: rgba(175, 190, 177, 0.897);
+        width: 400px;
+        padding-top: 10px;
+    }
+    
+    &__list{
+        list-style: none;
+    }
+
+    &__link {
+        background-color: rgb(199, 139, 124);
+    }
+}
+

@@ -1,6 +1,6 @@
 import { Link, useLocation, matchPath } from 'react-router-dom';
 import getDataApi from '../services/api';
-/* import '../styles/layouts/CharacterDetail.scss';  */
+import '../styles/layouts/CharacterDetail.scss';  
 
 const CharacterDetail = ({characterList, setCharacterList}) => {
   const { pathname } = useLocation(); 
@@ -17,12 +17,15 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
   return (
     characterFound 
         ?
-            (<main>
+            (
+                <>
+        <Link className='characterDetail__link' to={"/"}>Volver</Link>
+        <main className='characterDetail'>
             <article className='characterDetail__article'>
                 <img src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>
                 <div>
                 <h2>{characterFound.name}</h2>
-                <ul>
+                <ul className='characterDetail__list'>
                     <li>Estatus: {characterFound.status ? 'Viv@' : 'Muert@'}</li>
                     <li>Especie: {characterFound.species}</li>
                     <li>Género: {characterFound.gender} </li>
@@ -30,8 +33,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
                 </ul>
                 </div>
             </article>
-            <Link to={"/"}>Volver</Link>
-            </main>)
+            </main></>)
         :  
         <p>No se ha encontrado el personaje</p> 
   );
