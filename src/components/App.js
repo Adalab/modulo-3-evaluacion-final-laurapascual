@@ -44,7 +44,7 @@ function App() {
        <div className='background' style={{ 
       backgroundImage: `url(${background})`}}>
         <header>
-          <h1 className='header'>⚡Elige tu personaje de Harry Potter🤓</h1>
+          <h1 className='header'>⚡ Choose your Harry Potter's character 🤓</h1>
         </header>
         <main className="main">
         <Routes>

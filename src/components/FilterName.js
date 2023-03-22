@@ -8,7 +8,7 @@ function FilterName({ handleSearchName, searchName}) {
 
   return (
     <>
-      <label htmlFor="search">Busca por personaje:</label>
+      <label htmlFor="search">Search by name:</label>
           <input
             className="form__input-text"
             autoComplete="off"

@@ -9,7 +9,7 @@ function FilterHouse({ handleSelectHouse, selectHouse }) {
   return (
     <>
       <label htmlFor="houses">
-        Selecciona la casa:
+        Select the house:
       </label>
       <select
         className='select__houses'
