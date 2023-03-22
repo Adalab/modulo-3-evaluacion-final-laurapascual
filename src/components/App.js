@@ -33,6 +33,11 @@ function App() {
     setSelectHouse(value);
   };
 
+  const handleReset = () => {
+    setSearchName('');
+    setSelectHouse('Gryffindor');
+  }
+
   const characterFiltered = characterList.filter((eachCharacter) => {
     return eachCharacter.name.toLowerCase().includes(searchName.toLowerCase());
   })
@@ -50,7 +55,7 @@ function App() {
         <Routes>
           <Route path='/' 
             element={<>
-              <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse}></Filters>
+              <Filters searchName={searchName} handleSearchName={handleSearchName} handleSelectHouse={handleSelectHouse} selectHouse={selectHouse} handleReset={handleReset} />
               <CharacterList characterList={characterFiltered} error={error}/></>}/>
           <Route path='/character/:characterId' 
           element={<CharacterDetail characterList={characterList} setCharacterList={setCharacterList}/>}/> 
