@@ -1,5 +1,4 @@
 
-
 .landing{
     background-image: url('../../images/landingBackground.jpg');
     height: 100vh;
@@ -16,17 +15,27 @@
             }
         }
         &__icon{
-            height: 300px;
-            width: 250px;
+            height: 80px;
+            width: 120px;
         
             @media (min-width: 769px) {
-                height: 600px;
-                width: 470px;
+                height: 280px;
+                width: 400px;
             }
         
             @media (min-width: 1024px) {
                 height: 280px;
                 width: 400px;
+            }
+        }
+
+        &__subtitle {
+            font-family: 'Fasthand', cursive;
+            font-weight: bold;
+            text-align: center;
+
+            @media (min-width: 769px) {
+                font-size: 25px;
             }
         }
 }
