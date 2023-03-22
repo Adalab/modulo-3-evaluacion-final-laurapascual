@@ -1,5 +1,9 @@
 .character__image{
-    width:150px;
+    width:70px;
+
+    @media (min-width: 769px) {
+        width: 150px;;
+    }
 }
 
 .card {
@@ -9,16 +13,27 @@
     background-color: rgba(252, 239, 224, 0.986);
     margin: 10px;
     border-radius: 5px;
-    height: 350px;
+    height: 220px;
+
+    @media (min-width: 769px) {
+        height: 350px;
+    }
    
     &__link{
         text-decoration: none;
         color: black;
     }
     &__title{
-        font-size: 25px;
+        font-size: 15px;
+        
+        @media (min-width: 769px) {
+            font-size: 25px;
+        }
     }
     &__subtitle {
-        font-size: 20px;
+        font-size: 15px;
+        @media (min-width: 769px) {
+            font-size: 20px;
+        }
     }
 }
