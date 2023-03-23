@@ -31,7 +31,7 @@ const CharacterDetail = ({characterList, setCharacterList}) => {
         ?
             (
             <>
-            <Link className='characterDetail__link' to={"/"}>🡨 Volver</Link>
+            <Link className='characterDetail__link' to={"/list"}>🡨 Back</Link>
             <main className='characterDetail'>
                 <article className='characterDetail__article'>
                     <img className='characterDetail__image' src={characterFound.photo} alt={`Foto de ${characterFound?.name}`}/>

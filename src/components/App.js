@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react';
 import { Routes, Route} from 'react-router-dom';
 import getDataApi from '../services/api';
 import '../styles/App.scss';
-import CharacterList from './CharacterList';
-import Filters from './Filters';
+import CharacterList from './List/CharacterList';
+import Filters from './Filters/Filters';
 import CharacterDetail from './CharacterDetail'; 
 import Landing from './Landing'; 
 import background from '../images/harry.jpg'
 import Header from './Header';
 
 
-function App() {
+const App = () => {
   const [characterList, setCharacterList] = useState([]);
   const [searchName, setSearchName] = useState('');
   const [selectHouse, setSelectHouse] = useState('Gryffindor');

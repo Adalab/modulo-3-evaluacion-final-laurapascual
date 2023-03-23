@@ -1,6 +1,6 @@
-import '../styles/layouts/FilterHouse.scss';
+import '../../styles/layouts/FilterHouse.scss';
 
-function FilterHouse({ handleSelectHouse, selectHouse }) {
+const FilterHouse = ({ handleSelectHouse, selectHouse }) => {
   const handleChange = (ev) => {
     const value = ev.target.value;
     handleSelectHouse(value);

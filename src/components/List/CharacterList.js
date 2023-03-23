@@ -1,6 +1,6 @@
 import CharacterCard from './CharacterCard';
-import Error from './Error';
-import '../styles/layouts/CharacterList.scss';
+import Error from '../Error';
+import '../../styles/layouts/CharacterList.scss';
 
 const characterList = ({characterList, searchName}) => {
   if(characterList.length === 0 && searchName !== '') {

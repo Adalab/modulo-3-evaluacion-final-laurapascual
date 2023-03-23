@@ -1,9 +1,9 @@
-import FilterName from "./FilterName";
-import FilterHouse from "./FilterHouse";
-import '../styles/layouts/Filters.scss';
-import FilterStatus from "./FilterStatus";
+import FilterName from "../Filters/FilterName";
+import FilterHouse from "../Filters/FilterHouse";
+import '../../styles/layouts/Filters.scss';
+import FilterStatus from "../Filters/FilterStatus";
 
-function Filters({handleSearchName, searchName, handleSelectHouse, handleReset, selectHouse, handleSelectStatus, selectStatus}) {
+const Filters = ({handleSearchName, searchName, handleSelectHouse, handleReset, selectHouse, handleSelectStatus, selectStatus}) => {
    const handleSubmit = (event) => {
     event.preventDefault();
   };

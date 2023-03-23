@@ -1,4 +1,4 @@
-import '../styles/layouts/FilterName.scss';
+import '../../styles/layouts/FilterName.scss';
 
 const FilterName = ({ handleSearchName, searchName}) => {
   const handleChange = (ev) => {

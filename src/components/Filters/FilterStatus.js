@@ -1,4 +1,4 @@
-import '../styles/layouts/FilterStatus.scss';
+import '../../styles/layouts/FilterStatus.scss';
 
 const FilterStatus = ({selectStatus, handleSelectStatus }) => {
   const handleChange = (ev) => {
